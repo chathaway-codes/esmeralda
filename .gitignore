@@ -1,3 +1,6 @@
 *.pyc
 python/*
+collected_static/
+node_modules/
 *.swp
+*.sqlite3

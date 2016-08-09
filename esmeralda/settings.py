@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'esmeralda',
+    'pipeline',
+    'twitter_bootstrap',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +57,7 @@ ROOT_URLCONF = 'esmeralda.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,4 +120,59 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'pipeline.finders.PipelineFinder',
+)
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
+
+## django-pipeline configuration
+STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
+PIPELINE = {
+    'STYLESHEETS': {
+        'bootstrap': {
+            'source_filenames': (
+                'esmeralda/less/esmeralda.less',
+            ),
+            'output_filename': 'css/b.css',
+            'extra_context': {
+                'media': 'screen,projection',
+            },
+        },
+    },
+    'JAVASCRIPT': {
+        'bootstrap': {
+            'source_filenames': (
+                'twitter_bootstrap/js/transition.js',
+                'twitter_bootstrap/js/modal.js',
+                'twitter_bootstrap/js/dropdown.js',
+                'twitter_bootstrap/js/scrollspy.js',
+                'twitter_bootstrap/js/tab.js',
+                'twitter_bootstrap/js/tooltip.js',
+                'twitter_bootstrap/js/popover.js',
+                'twitter_bootstrap/js/alert.js',
+                'twitter_bootstrap/js/button.js',
+                'twitter_bootstrap/js/collapse.js',
+                'twitter_bootstrap/js/carousel.js',
+                'twitter_bootstrap/js/affix.js',
+            ),
+            'output_filename': 'js/b.js',
+	}
+    },
+}
+
+
+# Configure LESS to search in certain projects static folders
+esmeralda_less = os.path.join(BASE_DIR, 'esmeralda', 'static', 'esmeralda', 'less')
+import twitter_bootstrap
+bootstrap_less = os.path.join(os.path.dirname(twitter_bootstrap.__file__), 'static', 'twitter_bootstrap', 'less')
+
+PIPELINE['LESS_ARGUMENTS'] = u'--include-path={}'.format(os.pathsep.join([bootstrap_less, esmeralda_less]))
+PIPELINE['CSS_COMPRESSOR'] = 'pipeline.compressors.NoopCompressor'
+PIPELINE['JS_COMPRESSOR'] = 'pipeline.compressors.NoopCompressor'
+PIPELINE['COMPILERS'] = (
+  'pipeline.compilers.less.LessCompiler',
+)
+

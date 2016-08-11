@@ -1,0 +1,15 @@
+{
+  "name": "esmeralda-webspace",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "A webspace for innovation, free thinking, and procrastination",
+  "repository": "https://tracker.logrit.com/repo/chathaway/esmeralda/",
+  "author": "Charles Hathaway <chathaway@logrit.com>",
+  "dependencies": {
+    "less": "^2.7.1",
+    "yuglify": "^0.1.4"
+  },
+  "engines": {
+    "node": ">= 0.4.1"
+  }
+}

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'esmeralda',
+    'jquery',
     'pipeline',
     'twitter_bootstrap',
 ]
@@ -143,6 +144,12 @@ PIPELINE = {
         },
     },
     'JAVASCRIPT': {
+        'jquery': {
+            'source_filenames': (
+	        'js/jquery.js',
+            ),
+            'output_filename': 'js/j.js',
+	},
         'bootstrap': {
             'source_filenames': (
                 'twitter_bootstrap/js/transition.js',

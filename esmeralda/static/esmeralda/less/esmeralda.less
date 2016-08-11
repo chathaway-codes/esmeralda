@@ -1,13 +1,15 @@
 @import 'bootstrap.less';
 @import 'mixins.less';
 
-.page-header {
+.page-banner {
   width: 100%;
   height: 360px;
-  background: url("/static/esmeralda/images/lakefront.png");
+  position: absolute;
+  background: url("/static/esmeralda/images/lakefront.png") center center;
   background-size: cover;
   top: 0px;
   margin-top: 0px;
+  z-index: -500;
   div {
     top: 0px;
     width: 100%;
@@ -16,13 +18,38 @@
     opacity: 0.4;
     padding-bottom: 0px;
     margin-bottom: 0px;
-
-    div {
-      &:extend(.jumbotron);
-      text-align: center;
-      opacity: 1;
-      background: transparent;
-      color: white;
-    }
+    z-index: -499;
   }
+}
+
+.page-description {
+  margin-top: 80px;
+  height: 280px;
+  div {
+    background-color: fade(@jumbotron-bg, 80%);
+  }
+}
+
+.content {
+  &:extend(.container);
+  padding-top: 30px;
+  .row {
+    padding: 10px 10px 10px 10px;
+  }
+}
+
+.blog-entry {
+  .meta {
+    color: @gray-light;
+    font-style: italic;
+    font-size: 18px;
+  }
+}
+
+/* Active nav item */
+#section-home .nav-home,
+#section-bio .nav-bio
+{
+  &:extend(.active);
+  background-color: @gray-lighter;
 }

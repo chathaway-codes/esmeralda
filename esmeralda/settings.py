@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'esmeralda',
     'jquery',
     'pipeline',
+    'stream',
     'twitter_bootstrap',
 ]
 

@@ -1,0 +1,7 @@
+<div class="blog-entry">
+  <h2><a href="{% url 'blog-post-detail' slug=object.slug %}">{{ object.title }}</a></h2>
+  <p class="meta">Posted by <author>{{ object.owner }}</author> on {{ object.when }}</p>
+  <div>{{ object.html_content|safe|truncatewords_html:100 }}</div>
+  <p><a href="{% url 'blog-post-detail' slug=object.slug %}">Read more...</a></p>
+  <hr>
+</div>

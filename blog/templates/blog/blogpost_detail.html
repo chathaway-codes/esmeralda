@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+  <h1>{{ object.title }}</h1>
+  <p class="meta">Posted by <author>{{ object.owner }}</author> on {{ object.when }}</p>
+  <div>
+    {{ object.html_content|safe }}
+  </div>
+{% endblock %}

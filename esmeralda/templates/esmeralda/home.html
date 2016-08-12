@@ -3,5 +3,9 @@
 {% block section %}home{% endblock %}
 
 {% block content %}
-  <h1>Hello, world!</h1>
+  {% for event in events %}
+    {% with object=event.content_object %}
+      {% include event.get_template %}
+    {% endwith %}
+  {% endfor %}
 {% endblock %}

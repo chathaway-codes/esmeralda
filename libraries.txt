@@ -2,3 +2,4 @@ django
 django-jquery
 django-pipeline
 django-twitter-bootstrap
+markdown

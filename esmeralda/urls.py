@@ -22,5 +22,6 @@ from .views import HomePageView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomePageView.as_view(), name='home'),
+    url(r'^double-king-pedro$', TemplateView.as_view(template_name='esmeralda/double_king.html'), name='double-king'),
     url(r'^blog/', include('blog.urls')),
 ]

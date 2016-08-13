@@ -4,11 +4,12 @@
 .page-banner {
   width: 100%;
   height: 360px;
-  position: absolute;
   background: url("/static/esmeralda/images/lakefront.png") center center;
   background-size: cover;
-  top: 0px;
+  position: absolute;
+  top: 50px;
   margin-top: 0px;
+  padding-top: 0px;
   z-index: -500;
   div {
     top: 0px;
@@ -24,15 +25,16 @@
 
 .page-description {
   margin-top: 80px;
-  height: 280px;
+  height: auto;
   div {
     background-color: fade(@jumbotron-bg, 80%);
+    min-height: 280px;
   }
 }
 
 .content {
   &:extend(.container);
-  padding-top: 30px;
+  padding-top: 50px;
   .row {
     padding: 10px 10px 10px 10px;
   }
@@ -52,4 +54,17 @@
 {
   &:extend(.active);
   background-color: @gray-lighter;
+}
+
+/* Simple page layout */
+.wrapper {
+    .make-row();
+}
+
+.column-left {
+    .make-md-column(6);
+}
+
+.column-right {
+    .make-md-column(6);
 }

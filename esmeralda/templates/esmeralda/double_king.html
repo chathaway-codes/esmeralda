@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+
+{% block page-header %}
+<h1>Double King Pedro</h1>
+
+<p class="lead">Double King is a card game that has been passed down in my family for many generations. It is only played in central Vermont at this point, which means that it is not well known, but it is fun and worth playing.</p>
+{% endblock %}
+
+{% block content %}
+            <div class="wrapper">
+                <div class="column-left">
+                    <h2>Point Values</h2>
+
+<table class="table table-striped">
+	<thead>
+    <th>Card</th>
+    <th>Value</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Ace</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>King</td>
+			<td>25</td>
+		</tr>
+		<tr>
+			<td><em>King</em></td>
+			<td>25</td>
+		</tr>
+		<tr>
+			<td>Queen</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>Jack</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>10</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>9</td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td><em>9</em></td>
+			<td>9</td>
+		</tr>
+		<tr>
+			<td>8</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td><em>5</em></td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>Joker</td>
+			<td>18</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Italicized means the card that is not the same suite as trump, but the same color. For example, if Clubs is trump, then the king, 9, and 5 of Spades is also trump.</p>
+<h2>Sample Hands and Bids</h2>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">Hands</th>
+			<th scope="col">Bid</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>A-K-K-Q-J-10</td>
+			<td>100</td>
+		</tr>
+		<tr>
+			<td>A-K-Q-J-10-4</td>
+			<td>60</td>
+		</tr>
+		<tr>
+			<td>K-K-Q-J-9-7</td>
+			<td>50</td>
+		</tr>
+		<tr>
+			<td>Q-J-4-6-9-3</td>
+			<td>30</td>
+		</tr>
+		<tr>
+			<td>2-3-4-6-7-J</td>
+			<td>0</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+                </div>
+                <div class="column-right">
+                    <h2>Gameplay</h2>
+
+<p>Double King is a 4 player team game. You are paired with the person sitting opposite the table of yourself. One of the keys to this game is that you <strong>can not talk</strong> to your partner, which adds to the challenge of the game.</p>
+
+<p>The game is split into two phases; during the first phase, you get a hand of 12 cards and using those cards, make "bets" about how many points you can capture during the second phase. There are 100 points in the game, so you should never bet above 100. If you fail to make your bet, you go backwards that many points.</p>
+
+<p>To start the second phase, the person who won the betting (bet the highest and everyone else backed out) gets to choose a suit (hearts, diamonds, clubs, spades). This suit is "trump"; all this means is that the cards of the suit are worth points and will win if there are no other trump on the table. When multiple trump cards are on the table, the highest wins. The person who won the bet starts the second round, then play moves clockwise. After all players toss a card, the winner begins the next round.</p>
+
+<p>At the end of the second phase, you count your points. If you made your bet, you get all the points you won. The opposing team gets the points that they got regardless. If you failed to make your bet, you go backwards.</p>
+
+<h2>Rules</h2>
+
+<h3>Winning</h3>
+
+<p>A team wins when they reach 500 points.</p>
+
+<h3>Cards</h3>
+
+<p>In addition to a 52 card deck, this game requires one Joker. There will be a total of 53 cards.</p>
+
+<h3>Phase 1</h3>
+
+<p>The oldest player deals first. They shuffle the deck, then pass out 12 cards to each player. 5 cards go into the middle of the table into the "kitty".</p>
+
+<p>Starting with the first player to the left of the dealer, players take turns making bids (bets). You can either pass (give up, let someone else bid), or raise the bid by at least one point at a time. The bidding continues until only one player remains.</p>
+
+<p>Record the player, and their bid on a sheet of paper. You will use this paper to keep track of how many points each team has.</p>
+
+<p>The player now gets the kitty, and has to choose a suit to be "trump". They can choose Spades, Clubs, Diamonds, or Hearts. In addition to all cards of that suite being trump, the Joker, and King, nine, and five of the same color (i.e; if the player called hearts as trump, the king-9-5 of diamonds) are also trump.&nbsp;</p>
+
+<p>Each player discards cards from their hand until they have 6 cards. You can not discard trump. If you have more than six trump cards, you get to pick some to pass to your partner. If, after you pass to your partner, they have more than 6, they pass to their left (once again, they get to pick the cards).</p>
+
+<h3>Phase 2</h3>
+
+<p>Phase 2 is where the points are won, and the bid met or not. The player who won the bid goes first. On their first card, they must play a trump card. Then the player to their left goes, and puts down a card. If the first card thrown out was a trump card, trump <strong>MUST </strong>be played, otherwise it is a "throw off" and any cards can be played. If a player has no trump, they announce they are "out" and put down their hand. They no longer partake in the remaining hands.</p>
+
+<p>Once every has played a card, judge who won based on the following criteria:</p>
+
+<ul>
+	<li>The highest trump card wins
+	<ul>
+		<li>If there is a "King" and an "off-Kind" (so if trump is hearts and there is a King of Hearts and a King of Diamonds), the "King" wins (in this case, the King of Hearts)</li>
+		<li>The joker counts as trump; he wins if there are no other trump cards on the table</li>
+	</ul>
+	</li>
+	<li>The highest throw off
+	<ul>
+		<li>If there is a tie, the throw off of the same color wins. If there is not one, Hearts beats Diamonds and Spades beats Clubs</li>
+	</ul>
+	</li>
+</ul>
+
+<p>Each team maintains a pile of cards they have taken. The player who won plays their next card.</p>
+
+<p>When all players are either out, or run out of cards, the play ends. Each team counts up how many points they won. If the team that selected the suit did not make their bid, the go backwards in points the number that they bid (if they bid 65, and got 64, they go back 65 points. If they bid 75, and got 2, they go back 75). The other team adds however many points they won to their total. The point values of the cards are on the left hand side of this page.</p>
+
+<p>After Phase 2 is complete, the deal goes to the left and we repeat phase 1. This continues until a team wins.</p>
+<h2>Miscellaneous Notes</h2>
+
+<h3>Tossing out a hand</h3>
+
+<p>If any player is dealt a hand with no face cards, they have the option of tossing out this hand. This means that all cards are returned, and the deal shifts to the left.</p>
+
+<h3>Hundred and double it!</h3>
+
+<p>If a player is feeling confident during the betting, they have the option of saying "Hundred and double it!". This means that they are betting they will get 100 points, and they are saying that if they get it they want 200 points. However, if they don't make their bid, they lose 200 points.</p>
+{% endblock %}

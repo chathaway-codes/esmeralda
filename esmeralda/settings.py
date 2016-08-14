@@ -185,3 +185,8 @@ PIPELINE['COMPILERS'] = (
   'pipeline.compilers.less.LessCompiler',
 )
 
+
+try:
+    from local_settings import *
+except:
+    pass

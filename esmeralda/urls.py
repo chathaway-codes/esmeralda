@@ -24,4 +24,6 @@ urlpatterns = [
     url(r'^$', HomePageView.as_view(), name='home'),
     url(r'^double-king-pedro$', TemplateView.as_view(template_name='esmeralda/double_king.html'), name='double-king'),
     url(r'^blog/', include('blog.urls')),
+    # For backward compatibility
+    url(r'^weblog/', include('blog.urls')),
 ]

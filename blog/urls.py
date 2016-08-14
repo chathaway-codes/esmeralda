@@ -21,4 +21,7 @@ from .views import BlogPostDetailView, BlogPostListView
 urlpatterns = [
     url(r'^(?P<slug>[^/]+)$', BlogPostDetailView.as_view(), name='blog-post-detail'),
     url(r'^$', BlogPostListView.as_view(), name='blog-list'),
+
+    # Compatibility URL's
+    url(r'^\d{4}/\d{2}/\d{2}/(?P<slug>[^/]+)/$', BlogPostDetailView.as_view()),
 ]

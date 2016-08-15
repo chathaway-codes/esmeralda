@@ -9,3 +9,5 @@ class BlogPostDetailView(DetailView):
     model = BlogPost
 class BlogPostListView(ListView):
     model = BlogPost
+    paginate_by = 10
+    ordering = ["-when"]

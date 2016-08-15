@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomePageView.as_view(), name='home'),
     url(r'^double-king-pedro$', TemplateView.as_view(template_name='esmeralda/double_king.html'), name='double-king'),
+    url(r'^lakehouse-paaarrrttayyyy-2016$', TemplateView.as_view(template_name='esmeralda/lakehouse-2016.html'), name='lakehouse-2016'),
     url(r'^blog/', include('blog.urls')),
     # For backward compatibility
     url(r'^weblog/', include('blog.urls')),

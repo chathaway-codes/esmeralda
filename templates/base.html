@@ -56,13 +56,32 @@
           {% endfor %}
         </div>
       {% endblock %}
-      <div class="footer">
         <hr>
+      <div class="wrapper">
+				<div class="column-left">
+				{% if is_paginated %}
+						<span class="page-links">
+							{% if page_obj.has_previous %}
+								<a href="{% url 'blog-list' %}?page={{ page_obj.previous_page_number }}">previous</a>
+							{% endif %}
+							<span class="page-current">
+								Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+							</span>
+							{% if page_obj.has_next %}
+								<a href="{% url 'blog-list' %}?page={{ page_obj.next_page_number }}">next</a>
+							{% endif %}
+						</span>
+				{% endif %}
+				</div>
+
+				<div class="column-right" style="text-align: right;">
         &copy; 2016 Charles Hathaway
         {% if request.path != '/' %}
           <a href="{{ request.path }}.pdf">PDF</a>
         {% endif %}
+				</div>
       </div>
+				<hr>
     </div>
     {% javascript 'jquery' %}
     {% javascript 'bootstrap' %}

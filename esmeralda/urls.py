@@ -17,14 +17,15 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic.base import TemplateView
 
-from .views import HomePageView
+from .views import HomePageView, render_page_pdf
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^.+.pdf$', render_page_pdf),
     url(r'^$', HomePageView.as_view(), name='home'),
     url(r'^double-king-pedro$', TemplateView.as_view(template_name='esmeralda/double_king.html'), name='double-king'),
     url(r'^lakehouse-paaarrrttayyyy-2016$', TemplateView.as_view(template_name='esmeralda/lakehouse-2016.html'), name='lakehouse-2016'),
-    url(r'^blog/', include('blog.urls')),
     # For backward compatibility
     url(r'^weblog/', include('blog.urls')),
+    url(r'^blog/', include('blog.urls')),
 ]

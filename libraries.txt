@@ -2,4 +2,8 @@ django
 django-jquery
 django-pipeline
 django-twitter-bootstrap
+html5lib==1.0b8 # Need to keep version for xhtml2pdf
 markdown
+reportlab
+xhtml2pdf
+

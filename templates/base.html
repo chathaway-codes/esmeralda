@@ -56,6 +56,9 @@
       <div class="footer">
         <hr>
         &copy; 2016 Charles Hathaway
+        {% if request.path != '/' %}
+          <a href="{{ request.path }}.pdf">PDF</a>
+        {% endif %}
       </div>
     </div>
     {% javascript 'jquery' %}

@@ -1,10 +1,5 @@
 {% extends 'blog/base.html' %}
 
-{% block page-header %}
-  <h1>Gradute Blog</h1>
-  <p>Rantings of a semi-conscious graduate student -- take with a grain of salt.</p>
-{% endblock %}
-
 {% block content %}
   <h1>{{ object.title }}</h1>
   <p class="meta">Posted by <author>{{ object.owner }}</author> on {{ object.when }}</p>

@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.contrib.auth.decorators import login_required
 
 from .views import FolderView, upload_file
 
 urlpatterns = [
-    url(r'^browse/(?P<path>.*)$', FolderView.as_view(), name='media-file'),
-    url(r'^upload/(?P<path>.*)$', upload_file, name='media-upload'),
+    url(r'^browse/(?P<path>.*)$', login_required(FolderView.as_view()), name='media-file'),
+    url(r'^upload/(?P<path>.*)$', login_required(upload_file), name='media-upload'),
 ]

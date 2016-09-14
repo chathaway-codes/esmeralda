@@ -23,6 +23,7 @@ from .views import HomePageView, render_page_pdf
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^files/', include('media_views.urls')),
     url(r'^.+.pdf$', render_page_pdf),
     url(r'^$', HomePageView.as_view(), name='home'),
     url(r'^double-king-pedro$', TemplateView.as_view(template_name='esmeralda/double_king.html'), name='double-king'),
@@ -30,7 +31,6 @@ urlpatterns = [
     # For backward compatibility
     url(r'^weblog/', include('blog.urls')),
     url(r'^blog/', include('blog.urls')),
-    url(r'^files/', include('media_views.urls')),
 ]
 urlpatterns += [
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': settings.MEDIA_ROOT,}),

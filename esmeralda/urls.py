@@ -28,4 +28,5 @@ urlpatterns = [
     # For backward compatibility
     url(r'^weblog/', include('blog.urls')),
     url(r'^blog/', include('blog.urls')),
+    url(r'^files/', include('media_views.urls')),
 ]

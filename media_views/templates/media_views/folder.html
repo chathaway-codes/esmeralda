@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block breadcrumbs %}
+<ol class="breadcrumb">
+  <li><a href={% url 'media-file' path="" %}>Root</a></li>
+  {% for path in path_parts %}
+    <li><a href="{% url 'media-file' path=path %}">{{ path }}</a></li>
+  {% empty %}
+  {% endfor %}
+</ol>
+{% endblock %}
+
+{% block content %}
+<p>
+  <form action="{% url 'media-upload' path=path %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+  {{ upload_form }}
+  <input type="submit" value="Submit" />
+  </form>
+</p>
+<table class="table table-striped table-hover">
+  <tr>
+    <th>Name</th>
+    <th>Size</th>
+    <th>Last Modified</th>
+  </tr>
+  {% for object in object_list %}
+    {% if object.dir %}
+    <tr>
+      <td><a href="{% url 'media-file' path=object.path %}">{{ object.name }}/</a></td>
+      <td>{{ object.size|filesizeformat }}</td>
+      <td>{{ object.last_modified }}</td>
+    </tr>
+    {% endif %}
+  {% endfor %}
+  {% for object in object_list %}
+    {% if not object.dir %}
+    <tr>
+      <td><a href="{% url 'media-file' path=object.path %}">{{ object.name }}</a></td>
+      <td>{{ object.size|filesizeformat }}</td>
+      <td>{{ object.last_modified }}</td>
+    </tr>
+    {% endif %}
+  {% endfor %}
+</table>
+{% endblock %}

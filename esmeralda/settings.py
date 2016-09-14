@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'esmeralda',
     'jquery',
+    'media_views',
     'pipeline',
     'stream',
     'twitter_bootstrap',
@@ -130,6 +131,9 @@ STATICFILES_FINDERS = (
 )
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 ## django-pipeline configuration
 STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'

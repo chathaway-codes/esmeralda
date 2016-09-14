@@ -49,6 +49,8 @@
       </div>
     </div>
     <div class="content">
+      {% block breadcrumbs %}
+      {% endblock %}
       {% block content %}
         <div class="row">
           {% for i in "1234567809123094423094182349" %}

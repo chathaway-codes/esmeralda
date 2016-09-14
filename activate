@@ -1,6 +1,9 @@
-if [ ! -d "./python/" ]; then
-	virtualenv python/
+if [ ! -d "./python/" ] || [ "python/" -ot "libraries.txt" ]; then
+  if [ ! -d "./python/" ]; then
+	  virtualenv python/
+  fi
 	. ./python/bin/activate
+  echo "Updating packages..."
 	pip install -r ./libraries.txt
 fi
 

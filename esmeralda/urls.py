@@ -13,8 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views import static
 from django.views.generic.base import TemplateView
 
 from .views import HomePageView, render_page_pdf
@@ -30,3 +32,8 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls')),
     url(r'^files/', include('media_views.urls')),
 ]
+urlpatterns += [
+    url(r'^media/(?P<path>.*)$', static.serve, {'document_root': settings.MEDIA_ROOT,}),
+    url(r'^static/(?P<path>.*)$', static.serve, {'document_root': settings.STATIC_ROOT,}),
+]
+

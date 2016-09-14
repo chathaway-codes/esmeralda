@@ -36,7 +36,7 @@
   {% for object in object_list %}
     {% if not object.dir %}
     <tr>
-      <td><a href="{% url 'media-file' path=object.path %}">{{ object.name }}</a></td>
+      <td><a href="{{ MEDIA_URL }}{{ object.path }}">{{ object.name }}</a></td>
       <td>{{ object.size|filesizeformat }}</td>
       <td>{{ object.last_modified }}</td>
     </tr>

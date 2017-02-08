@@ -15,6 +15,9 @@ class BlogPost(models.Model):
     html_content = models.TextField(blank=True)
     when = models.DateTimeField(auto_now_add=True)
 
+    def __unicode__(self):
+        return self.title
+
 @receiver(pre_save, sender=BlogPost)
 def update_markdown(sender, instance, **kwargs):
     instance.html_content = markdown.markdown(instance.md_content, extensions=['markdown.extensions.codehilite'])

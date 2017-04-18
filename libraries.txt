@@ -4,6 +4,6 @@ django-pipeline
 django-twitter-bootstrap
 html5lib==1.0b8 # Need to keep version for xhtml2pdf
 markdown
+psycopg2
 reportlab
 xhtml2pdf
-

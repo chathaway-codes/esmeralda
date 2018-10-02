@@ -28,11 +28,13 @@ Make sure to share the C: drive with Docker.
 Open the project in the shell and type
 
 ````
-docker-compose up````
+docker-compose up
+````
 
 This installs and updates all the libraries required by Esmeralda.
 
 If the C: drive was not shared with Docker earlier, you are likely to get the following error:
+
 ````
 ERROR: for web  Cannot create container for service web: C: drive is not shared. Please share it in Docker for Windows Settings
 ERROR: Encountered errors while bringing up the project.

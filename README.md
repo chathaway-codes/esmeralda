@@ -14,10 +14,10 @@ Download and install Docker.
 Verify your installation by running the following commands:
 
 ````
-C:\Users\ranja\Documents\GitHub\esmeralda>docker --version
+C:\Users\Documents\esmeralda>docker --version
 Docker version 17.03.1-ce, build c6d412e
 
-C:\Users\ranja\Documents\GitHub\esmeralda>docker-compose --version
+C:\Users\Documents\esmeralda>docker-compose --version
 docker-compose version 1.11.2, build f963d76f
 ````
 
